@@ -1,0 +1,70 @@
+# Cartelle degli ambienti virtuali
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.venv/
+
+# File e cartelle di configurazione IDE/editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# File di Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# File di log e database
+*.log
+*.sqlite3
+
+# File di configurazione
+instance/
+config.py
+
+# File o cartelle create da sistemi operativi
+.DS_Store
+Thumbs.db
+
+# File di test coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# File per i pacchetti Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+pip-wheel-metadata/
+wheels/
+
+# File di pipenv
+Pipfile.lock
+
+# File di Jupyter Notebook
+.ipynb_checkpoints/
+
+# File temporanei generati da editor o plugin
+*.swp
+*.bak
+*.tmp
+*.old
+*.orig
+
+# Cartelle e file specifici di Render (se non vuoi tracciare alcune configurazioni locali)
+render.yaml
+
+# Variabili di ambiente (se usi un file .env locale)
+.env

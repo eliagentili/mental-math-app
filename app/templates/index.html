@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Mental Math Trainer</h1>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.operation.label }}<br />
+    {{ form.operation() }}
+  </div>
+  <div class="form-group">
+    {{ form.num_count.label }} {{ form.num_count(class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ form.digit_count.label }} {{ form.digit_count(class="form-control") }}
+  </div>
+  <div class="form-group">
+    <label>Mode</label><br />
+    <input type="radio" id="single_mode" name="mode" value="single" checked />
+    <label for="single_mode">Single Calculation</label><br />
+    <input type="radio" id="continuous_mode" name="mode" value="continuous" />
+    <label for="continuous_mode">Continuous Mode</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Start</button>
+</form>
+{% endblock %}

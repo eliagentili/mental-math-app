@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Solve the operation:</h1>
+<h3>{{ operation }}</h3>
+<form method="POST">
+  <div class="form-group">
+    <input
+      type="tel"
+      name="answer"
+      class="form-control"
+      required
+      autofocus
+      pattern="[0-9]*"
+      inputmode="numeric"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% if session.get('continuous_mode') %}
+<form method="POST" action="{{ url_for('main.end_continuous_mode') }}">
+  <button type="submit" class="btn btn-danger mt-3">End</button>
+</form>
+{% endif %} {% endblock %}
