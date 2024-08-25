@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Solve the operation:</h1>
 <h3>{{ operation }}</h3>
-<form method="POST">
+<form method="POST" id="answer-form">
   <div class="form-group">
     <input
       type="tel"
@@ -11,6 +11,7 @@
       autofocus
       pattern="[0-9]*"
       inputmode="numeric"
+      id="answer-input"
     />
   </div>
   <button type="submit" class="btn btn-success">Submit</button>
@@ -19,4 +20,20 @@
 <form method="POST" action="{{ url_for('main.end_continuous_mode') }}">
   <button type="submit" class="btn btn-danger mt-3">End</button>
 </form>
-{% endif %} {% endblock %}
+{% endif %} {% endblock %} {% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Imposta il focus sull'input appena la pagina è caricata
+    document.getElementById('answer-input').focus();
+  });
+
+  // Imposta nuovamente il focus sull'input dopo l'invio del modulo
+  document
+    .getElementById('answer-form')
+    .addEventListener('submit', function () {
+      setTimeout(function () {
+        document.getElementById('answer-input').focus();
+      }, 10); // leggero delay per assicurarsi che il focus sia impostato dopo il reload
+    });
+</script>
+{% endblock %}
