@@ -63,8 +63,8 @@ Pipfile.lock
 *.old
 *.orig
 
-# Cartelle e file specifici di Render (se non vuoi tracciare alcune configurazioni locali)
-render.yaml
+# Non ignorare il file render.yaml poiché è necessario per il deployment su Render
+# render.yaml
 
 # Variabili di ambiente (se usi un file .env locale)
 .env
